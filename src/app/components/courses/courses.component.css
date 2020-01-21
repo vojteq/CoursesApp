@@ -1,0 +1,25 @@
+.btn {
+    margin: 10px;
+}
+
+img {
+    /* width: 50px;
+    height: 50px; */
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.even {
+  background-color: lightgrey;
+}
+
+.odd {
+  /* background-color: lightslategrey; */
+  background-color: darkgrey;
+}

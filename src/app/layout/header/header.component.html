@@ -1,0 +1,14 @@
+<div class="container">
+    <!-- fixed-top -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" routerLink="courses">Lista kursów</a>
+          
+          <!-- <a class="nav-item mr-auto mt-2 mt-lg-0" routerLink="login">Zaloguj</a> -->
+          <div class="authButtons">
+            <button type="button" class="btn btn-outline-primary" *ngIf="!authService.isLoggedIn()" routerLink="register">Zarejestruj</button>
+            <button type="button" class="btn btn-outline-success" *ngIf="!authService.isLoggedIn()" routerLink="login">Zaloguj</button>
+            <button type="button" class="btn btn-outline-danger" *ngIf="authService.isLoggedIn()" (click)="authService.LogOut()">Wyloguj</button>
+          </div>
+          <p id="displayUser" *ngIf="authService.isLoggedIn()">{{authService.getUser().email}}</p>
+      </nav>
+  </div>

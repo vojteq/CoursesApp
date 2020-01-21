@@ -1,0 +1,24 @@
+<button class="btn btn-primary" type="button" *ngIf="authService.isLoggedIn()" data-toggle="collapse" data-target="#collapseAdd" aria-expanded="false" aria-controls="collapseAdd">
+    Dodaj kurs
+</button>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+    Wyszukaj kurs
+</button>
+
+<div class="collapse" id="collapseAdd">
+    <app-add-course (addCourse)="addCourse($event)"></app-add-course>
+</div>
+<div class="collapse" id="collapseSearch">
+    <input [(ngModel)]="searchName" placeholder="Nazwa" class="form-control">
+    <input [(ngModel)]="searchEcts" placeholder="ECTS" class="form-control">
+    <input [(ngModel)]="searchSemester" placeholder="Semestr" class="form-control">
+</div>
+
+<div class="container-fluid">
+    <app-course
+        *ngFor="let course of (courses | nameFilterPipe : searchName | ectsFilterPipe : searchEcts | semesterFilterPipe : searchSemester ); let i = index"
+        [course]="course"
+        [index]="i"
+        >
+    </app-course>
+</div>

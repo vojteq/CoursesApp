@@ -1,0 +1,42 @@
+<form  (ngSubmit)="onSubmit()" >
+    <div>
+        <p>Nazwa kursu</p>
+        <input type="text" name="name" [(ngModel)]="name" class="form-control">
+    </div>
+    <div>
+        <p>Ilość punktów ECTS</p>
+        <input type="number" name="ects" [(ngModel)]="ects" class="form-control">
+    </div>
+    <div>
+        <p>Semestr</p>
+        <input type="number" name="semester" [(ngModel)]="semester" class="form-control">
+    </div>
+    <div>
+        <p>Rodzaj zajęć</p>
+        <select name="type" [(ngModel)]="type" aria-placeholder="type" class="form-control">
+            <option value ="Wykład">Wykład</option>
+            <option value ="Ćwiczenia">Ćwiczenia</option>
+            <option value ="Labolatoria">Labolatoria</option>
+            <option value ="Projekt">Projekt</option>
+        </select>
+    </div>
+    <div>
+        <p>Ilość miejsc</p>
+        <input type="number" name="maxStudents" [(ngModel)]="maxStudents" class="form-control">
+    </div>
+    <div>
+        <p>Opis kursu</p>
+        <!-- <input type="text" name="description" [(ngModel)]="description" class="form-control"> -->
+        <textarea type="text" name="description" [(ngModel)]="description" class="form-control" rows="4"></textarea>
+    </div>
+    <div>
+        <p>Link do obrazka</p>
+        <input type="text" name="pictureUrl" [(ngModel)]="pictureUrl" class="form-control">
+    </div>
+    <div>
+        <p>Twoja ocena</p>
+        <input type="number" [(ngModel)]="rating" class="form-control">
+    </div>
+    
+    <input type="submit" value="Dodaj" class="btn btn-info" data-toggle="collapse" data-target="#collapseAdd">
+</form>
